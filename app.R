@@ -8,7 +8,7 @@ library(purrr)
 app <- Dash$new(external_stylesheets = dbcThemes$BOOTSTRAP)
 
 url <- "https://raw.githubusercontent.com/UBC-MDS/vancouver_crime_dashboard/main/data/processed/processed_df.csv"
-crime <- read_csv(url)
+crime <- read.csv(url)
 data <- crime  %>% group_by(TIME, YEAR, Neighborhood) %>% count(HOUR) 
 
 feature_mapping <- function(label, value) {
